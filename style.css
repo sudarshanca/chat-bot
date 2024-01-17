@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root{
+  --blue1: #42C2FF;
+  --blue2: #85F4FF;
+  --blue3: #B8FFF9;
+  --blue4: #EFFFFD;
+  --blue5: #d4d2d2;
+}
+
+/* toggle chatbot*/
+.chatbot-toggle{
+  position: absolute;
+  bottom: 3vh;
+  right: 2vw;
+  background-color: #42C2FF;
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chatbot-toggle {
+  color: white;
+}
+
+body {
+  height: 100%;
+}
+
+/*chatbot body*/
+.container{
+  height: 100dvh;
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--blue4);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* header starts */
+.header {
+  width: 100%;
+  min-height: 2.5rem;
+  height: 8vh;
+  background-color: var(--blue1);
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 1rem 1rem;
+  color: var(--blue4);
+}
+
+.header .header-left {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+h3{
+  font-weight: 500;
+  font-style: italic;
+}
+
+.header span {
+  cursor: pointer;
+}
+
+.header img {
+  width: 2rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.header-right .hanburg-menu {
+  display: none;
+}
+
+#myMenu {
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+@keyframes example {
+  0%   {opacity: 0;}
+  50%  {opacity: 50;}
+  100% {opacity: 100;}
+}
+
+#myMenu ul {
+  list-style: none;
+  display: flex;
+}
+
+#myMenu ul li a{
+  text-decoration: none;
+  margin: .5rem;
+  color: var(--blue4);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+
+/* chat body starts */
+.chat-body-container {
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.chat-body {
+  background-color:var(--blue4);
+  padding: .2rem;
+}
+.chat-body .msgbox {
+  display: flex;
+  align-items: end;
+  height: auto;
+}
+
+/* chat body scroll*/
+
+ .chat-body-container::-webkit-scrollbar-track
+ {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   background-color: var(--blue4);
+   border-radius: 10px;
+ }
+ 
+ .chat-body-container::-webkit-scrollbar
+ {
+   width: 5px;
+   background-color:var(--blue4);
+ }
+ 
+ .chat-body-container::-webkit-scrollbar-thumb
+ {
+   border-radius: 10px;
+   background-image: var(--blue4);
+ }
+
+/* bouble chat message*/
+
+.chatbot-message,
+.user-message {
+
+  /* important */
+    word-break: break-all ;
+  /* important */
+  padding: 8px;
+  background: var(--blue1);
+  margin: 5px;
+  width: max-content;
+  max-width: 65%;
+  align-self: flex-end;
+  border-radius: 10px 10px 3px 10px;
+
+}
+
+.chatbot-message {
+  background: #d8d8d8;
+  color: #000;
+  align-self: flex-start;
+  border-radius: 10px 10px 10px 3px;
+}
+
+.width{
+  width: 80%;
+}
+
+/*user image*/
+.chat-body .msgbox div .image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  /*user image*/
+  background-image: url(./assets/luffy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: .5rem;
+}
+/*time*/
+.chat-body .time {
+  font-size: .5rem;
+}
+.chat-body .time:nth-child(odd) {
+  display: none;
+}
+
+/* chatbot image */
+.chat-body .msgbox:has(.chatbot-message) .image {
+  /*chatbot image*/
+  background-image: url(./assets/zoro.jpg); 
+  object-fit: contain;
+}
+.chat-body .msgbox:has(.user-message) {
+  flex-direction: row-reverse;
+}
+
+/* PoweredByTheFinansol*/
+ .PoweredByTheFinansol{
+  text-decoration: none;
+  color: #000;
+  font-size: .6rem;
+  display: flex;
+  justify-content: end;
+  margin: .1rem 1rem;
+  cursor: pointer;
+ }
+
+
+/* footer starts */
+.footer {
+  width: 100%;
+  height: 8vh;
+  min-height: 45px;
+  background-color: var(--blue1);
+  border-radius: 1rem 1rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .5rem;
+}
+
+.input-body {
+  flex: 8;
+  margin: 0 5px;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: rgb(249, 250, 250);
+  border: 1px solid rgb(181, 189, 196);
+  padding: 0 .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.input-body input {
+  font-size: 16px;
+  height: 35px;
+  line-height: 24px;
+  padding: 7px 8px;
+  color: rgb(8, 9, 10);
+  box-shadow: none;
+  width: 100%;
+  border: none;
+}
+.input-body input:focus{
+    background-color: transparent;
+    outline: none;
+}
+
+.input-body span {
+  margin: 0 .2rem;
+}
+
+.add {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.add span {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.input {
+  position: absolute;
+  bottom: 9vh;
+  width: auto;
+  width: 130px;
+  height: 80px;
+  padding: .5rem;
+  background-color: var(--blue1);
+  border-radius: 5%;
+  display: none;
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+.show{
+  display: flex;
+}
+
+.input .file{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.input .file a{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  width: auto;
+  color: var(--blue4);
+}
+
+/*for mobile*/
+@media (max-width: 600px) {
+   .container{
+    width: 100%;
+   }
+
+   .header-right .hanburg-menu {
+    display: block;
+   }
+
+   #myMenu {
+    display: none;
+    position: absolute;
+    padding: 0 .8rem;
+    top: 9vh;
+    right:2vh;
+    background-color: var(--blue1);
+    border-radius: 5%;
+  }
+  #myMenu ul {
+    flex-direction: column-reverse;
+    padding: .5rem;
+  }
+
+  #myMenu.show {
+    display: block;
+  }
+}
+
+/*for desktop*/
+
+@media (min-width: 600px) {
+  .container{
+    height: max-content;
+    width: 350px;
+    border: 2px solid rgb(235, 235, 235);
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    bottom: 3vh;
+    right: 2vw;
+  } 
+  .chat-body-container{
+    height: 400px;
+    flex: none;
+  }
+  /*font size*/
+  .chatbot-message,
+  .user-message {
+  font-size: 10px;
+ }
+ .chat-body .msgbox div .image {
+  width: 25px;
+  height: 25px;
+ }
+}

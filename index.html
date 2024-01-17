@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chat-bot</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <!-- popup icon -->
+     <div class="chatbot-toggle" onclick="openChatBot()">
+      <span class="material-symbols-outlined">
+        chat
+        </span>
+     </div>
+  
+  <!--chatbot body-->
+  <div class="container">
+    <!--header section starts-->
+    <div class="header">
+
+        <div class="header-left">
+          <img src="./assets/chatbot.png" alt="bot">
+          <h3>ChatBot</h3>
+        </div>
+
+      <div class="header-right"> 
+
+        <div onclick="toggleMenu()">
+          <span class="material-symbols-outlined hanburg-menu ">
+          more_vert
+          </span>
+        </div>
+
+        <div id="myMenu">
+          <ul>
+            <li>
+              <a onclick="clearData()"><span class="material-symbols-outlined">
+              restart_alt
+              </span> </a></li>
+            <li>
+              <a  onclick="closeChatBot()" ><span class="material-symbols-outlined">
+              close
+              </span> </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--header section ends-->
+
+    <!--chat-body section starts-->
+    <div class="chat-body-container">
+      <p  class="PoweredByTheFinansol">Powered by TheFinansol</p>
+      <div class="chat-body" id="chat-body">
+     <!--
+         <div class="msgbox">
+          <div class="image"></div>
+          <div class="message"></div> user message and chatbot message
+          <div class="innerHtml"></div> extra div
+         </div>
+         <p class="time"></p>
+     -->
+      </div>
+    </div>
+    <!--chat-body section ends-->
+        
+    <!--footer section starts-->
+    <div class="footer">
+        
+        <div class="add"  onclick="toggleAdd()">
+          <span class="material-symbols-outlined">
+            add
+          </span>
+        </div>
+
+
+        <div class="input" id="add">
+          <div class="file">
+            <a href="#">
+              <span class="material-symbols-outlined">
+              folder
+              </span> document</a>
+            <a href="#">
+              <span class="material-symbols-outlined">
+              image
+              </span> images</a>
+          </div>
+        </div>
+
+        <div class="input-body">
+          <input type="text" id="txtInput" placeholder="type here.">
+          <span class="material-symbols-outlined" style="cursor: pointer;">
+            mic
+          </span>
+
+          <span class="material-symbols-outlined send " style="cursor: pointer;">
+              send
+          </span>
+        </div>
+      </div>
+    <!--footer section ends-->
+  </div>
+   <script src="script.js" defer></script>
+   <script src="response.js" defer></script>
+</body>
+</html>
+
